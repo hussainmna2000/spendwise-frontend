@@ -7,8 +7,8 @@ import {
 } from '../types/finance';
 
 export const DEFAULT_API_CONFIG: ApiEndpointConfig = {
-  baseUrl: (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api').replace(/\/+$/, ''),
-  timeoutMs: 6000,
+  baseUrl: (import.meta.env.VITE_API_BASE_URL || 'https://spendwise-backend-am5k.onrender.com/api').replace(/\/+$/, ''),
+  timeoutMs: 65000,
   endpoints: {
     chat: '/chat',
     dashboard: '/dashboard',

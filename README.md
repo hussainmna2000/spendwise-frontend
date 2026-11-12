@@ -9,7 +9,7 @@ npm ci
 npm run dev
 ```
 
-The app uses `http://localhost:5000/api` when `VITE_API_BASE_URL` is not set. To use another API, create `.env.local` from `.env.example` and set `VITE_API_BASE_URL` to the backend URL including `/api`.
+The app defaults to the deployed Render API (`https://spendwise-backend-am5k.onrender.com/api`). For local backend development, create `.env.local` and set `VITE_API_BASE_URL=http://localhost:5000/api`. The request timeout is 65 seconds to allow a sleeping Render instance to wake.
 
 ## Vercel
 
