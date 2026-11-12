@@ -13,4 +13,4 @@ The app uses `http://localhost:5000/api` when `VITE_API_BASE_URL` is not set. To
 
 ## Vercel
 
-Import this repository as a Vercel project. The project root is the repository root; `vercel.json` defines the Vite build, `dist` output, and SPA route fallback. Configure `VITE_API_BASE_URL` in Vercel with the deployed Render API URL ending in `/api`.
+Import this repository as a Vercel project. The project root is the repository root; `vercel.json` defines the Vite build, `dist` output, and SPA route fallback. Configure the Vercel environment variable `VITE_API_BASE_URL` as `https://spendwise-backend-am5k.onrender.com/api` for Production and Preview.
