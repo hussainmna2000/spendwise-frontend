@@ -47,7 +47,19 @@ class SpendWiseFlaskApiService {
     try {
       const savedBaseUrl = localStorage.getItem('spendwise_api_base_url');
       if (savedBaseUrl && savedBaseUrl.trim()) {
-        this.config.baseUrl = savedBaseUrl.trim().replace(/\/+$/, '');
+        const normalizedSavedBaseUrl = savedBaseUrl.trim().replace(/\/+$/, '');
+        const isHostedFrontend =
+          typeof window !== 'undefined' &&
+          !['localhost', '127.0.0.1'].includes(window.location.hostname);
+        const isLoopbackBackend =
+          /^https?:\/\/(localhost|127(?:\.\d{1,3}){3}|0\.0\.0\.0)(:\d+)?(?:\/|$)/i.test(normalizedSavedBaseUrl);
+
+        if (isHostedFrontend && isLoopbackBackend) {
+          // A saved development URL cannot work for visitors to the hosted app.
+          localStorage.removeItem('spendwise_api_base_url');
+        } else {
+          this.config.baseUrl = normalizedSavedBaseUrl;
+        }
       }
     } catch {
       // Ignore storage access errors
