@@ -1,0 +1,6 @@
+{
+  "name": "SpendWise AI",
+  "description": "AI-Powered Personal Finance and Smart Expense Management Chatbot & Financial Analytics Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
